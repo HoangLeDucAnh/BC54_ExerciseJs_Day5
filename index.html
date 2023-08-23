@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .disable {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bt1 py-5">
+        <h1 class="text-center text-danger">BÀI TẬP QUẢN LÝ TUYỂN SINH</h1>
+        <div class="form-group">
+          <label for="">Mời nhập điểm chuẩn</label>
+          <input
+            type="text"
+            name=""
+            id="diemChuan"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập điểm môn toán</label>
+          <input
+            type="text"
+            name=""
+            id="diemToan"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập điểm môn lý</label>
+          <input
+            type="text"
+            name=""
+            id="diemLy"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập điểm môn hóa</label>
+          <input
+            type="text"
+            name=""
+            id="diemHoa"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for=""
+            >Mời chọn khu vực ưu tiên (chọn X nếu không thuộc diện ưu
+            tiên)</label
+          >
+          <select class="form-control" name="" id="khuVuc">
+            <option value="2">A</option>
+            <option value="1">B</option>
+            <option value="0.5">C</option>
+            <option value="0">X</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for=""
+            >Mời chọn đối tượng ưu tiên (chọn 0 nếu không thuộc diện ưu
+            tiên)</label
+          >
+          <select class="form-control" name="" id="doiTuong">
+            <option value="2.5">1</option>
+            <option value="1.5">2</option>
+            <option value="1">3</option>
+            <option value="0">0</option>
+          </select>
+        </div>
+        <button class="btn btn-success" onclick="cal1()">Trả kết quả</button>
+        <p class="py-2 text-success display-3" id="result1"></p>
+      </div>
+      <div class="bt2 py-5">
+        <h1 class="text-danger text-center">BÀI TẬP TÍNH TIỀN ĐIỆN</h1>
+        <div class="form-group">
+          <label for="">Mời nhập tên người dùng</label>
+          <input
+            type="text"
+            name=""
+            id="ten"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập số Kw tiêu thụ </label>
+          <input
+            type="text"
+            name=""
+            id="kw"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <button class="btn btn-success" onclick="cal2()">Trả kết quả</button>
+        <p class="display-3 text-success py-2" id="result2"></p>
+      </div>
+      <div class="bt3 py-5">
+        <h1 class="text-danger text-center">
+          BÀI TẬP TÍNH THUẾ THU NHẬP CÁ NHÂN MỘT NĂM
+        </h1>
+
+        <div class="form-group">
+          <label for="">Mời nhập họ tên</label>
+          <input
+            type="text"
+            name=""
+            id="hoTen"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập tổng thu nhập một năm</label>
+          <input
+            type="text"
+            name=""
+            id="tongThuNhap"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập số người phụ thuộc</label>
+          <input
+            type="text"
+            name=""
+            id="soNguoiPhuThuoc"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <button class="btn btn-success" onclick="cal3()">
+          Xuất thuế thu nhập cá nhân
+        </button>
+        <p class="display-3 text-success py-2" id="result3"></p>
+      </div>
+      <div class="bt4 py-5">
+        <h1 class="text-danger text-center">BÀI TẬP TÍNH TIỀN CÁP</h1>
+
+        <div class="form-group">
+          <label for="">Mời nhập mã khách hàng</label>
+          <input
+            type="text"
+            name=""
+            id="maKhachHang"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời chọn loại khách hàng</label>
+          <select
+            class="form-control"
+            name=""
+            id="loaiKhachHang"
+            onchange="addClass()"
+          >
+            <option value="1">Doanh Nghiệp</option>
+
+            <option value="0">Nhà Dân</option>
+          </select>
+        </div>
+        <div class="form-group KetNoi">
+          <label for="">Mời nhập số kết nối</label>
+          <input
+            type="text"
+            name=""
+            id="soKetNoi"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập số kênh cao cấp</label>
+          <input
+            type="text"
+            name=""
+            id="soKenhCaoCap"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <button class="btn btn-success" onclick="cal4()">Xuất hóa đơn</button>
+        <p class="py-2 text-success display-3" id="result4"></p>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
